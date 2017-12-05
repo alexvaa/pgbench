@@ -1,0 +1,210 @@
+alex@pc:~/pgbench$ pgbench -h localhost test alex -j 64 -c 50 -f insert.sql -T 30
+starting vacuum...end.
+transaction type: insert.sql
+scaling factor: 1
+query mode: simple
+number of clients: 50
+number of threads: 50
+duration: 30 s
+number of transactions actually processed: 625671
+latency average = 2.402 ms
+tps = 20814.415994 (including connections establishing)
+tps = 20897.259816 (excluding connections establishing)
+
+
+alex@pc:~/pgbench$ pgbench -h localhost test alex -j 64 -c 100 -f insert.sql -T 30
+starting vacuum...end.
+transaction type: insert.sql
+scaling factor: 1
+query mode: simple
+number of clients: 100
+number of threads: 64
+duration: 30 s
+number of transactions actually processed: 488120
+latency average = 6.164 ms
+tps = 16223.460183 (including connections establishing)
+tps = 16315.075137 (excluding connections establishing)
+
+
+alex@pc:~/pgbench$ pgbench -h localhost test alex -j 200 -c 1 -f insert.sql -T 30
+starting vacuum...end.
+transaction type: insert.sql
+scaling factor: 1
+query mode: simple
+number of clients: 1
+number of threads: 1
+duration: 30 s
+number of transactions actually processed: 149798
+latency average = 0.200 ms
+tps = 4993.232546 (including connections establishing)
+tps = 4994.592065 (excluding connections establishing)
+
+
+alex@pc:~/pgbench$ pgbench -h localhost test alex -j 100 -c 100 -f insert.sql -T 30
+starting vacuum...end.
+transaction type: insert.sql
+scaling factor: 1
+query mode: simple
+number of clients: 100
+number of threads: 100
+duration: 30 s
+number of transactions actually processed: 592437
+latency average = 5.081 ms
+tps = 19680.817932 (including connections establishing)
+tps = 19871.837571 (excluding connections establishing)
+
+
+alex@pc:~/pgbench$ pgbench -h localhost test alex -j 500 -c 500 -f insert.sql -T 30
+starting vacuum...end.
+transaction type: insert.sql
+scaling factor: 1
+query mode: simple
+number of clients: 500
+number of threads: 500
+duration: 30 s
+number of transactions actually processed: 398169
+latency average = 38.302 ms
+tps = 13054.265482 (including connections establishing)
+tps = 13544.203738 (excluding connections establishing)
+
+
+alex@pc:~/pgbench$ pgbench -h localhost test alex -j 50 -c 50 -f insert.sql -T 30 -s 5
+starting vacuum...end.
+transaction type: insert.sql
+scaling factor: 5
+query mode: simple
+number of clients: 50
+number of threads: 50
+duration: 30 s
+number of transactions actually processed: 524986
+latency average = 2.862 ms
+tps = 17470.164240 (including connections establishing)
+tps = 17578.800375 (excluding connections establishing)
+
+
+alex@pc:~/pgbench$ pgbench -h localhost test alex -j 50 -c 50 -f insert.sql -T 30 -s 50
+starting vacuum...end.
+transaction type: insert.sql
+scaling factor: 50
+query mode: simple
+number of clients: 50
+number of threads: 50
+duration: 30 s
+number of transactions actually processed: 560052
+latency average = 2.683 ms
+tps = 18637.597642 (including connections establishing)
+tps = 18693.550864 (excluding connections establishing)
+
+
+alex@pc:~/pgbench$ pgbench -h localhost test alex -j 50 -c 50 -f insert.sql -T 180 -s 5
+starting vacuum...end.
+transaction type: insert.sql
+scaling factor: 5
+query mode: simple
+number of clients: 50
+number of threads: 50
+duration: 180 s
+number of transactions actually processed: 2995461
+latency average = 3.006 ms
+tps = 16634.070295 (including connections establishing)
+tps = 16645.705247 (excluding connections establishing)
+
+
+alex@pc:~/pgbench$ pgbench -h localhost test alex -j 50 -c 50 -f insert.sql -T 600 -s 5
+starting vacuum...end.
+transaction type: insert.sql
+scaling factor: 5
+query mode: simple
+number of clients: 50
+number of threads: 50
+duration: 600 s
+number of transactions actually processed: 10251718
+latency average = 2.927 ms
+tps = 17083.036191 (including connections establishing)
+tps = 17085.679735 (excluding connections establishing)
+
+
+alex@pc:~/pgbench$ pgbench -h localhost test alex -j 50 -c 50 -f insert.sql -T 600 
+starting vacuum...end.
+transaction type: insert.sql
+scaling factor: 1
+query mode: simple
+number of clients: 50
+number of threads: 50
+duration: 600 s
+number of transactions actually processed: 11508157
+latency average = 2.607 ms
+tps = 19177.220639 (including connections establishing)
+tps = 19180.773849 (excluding connections establishing)
+
+
+
+
+
+shared_buffers = 128MB  
+alex@pc:~/pgbench$ pgbench -h localhost test alex -j 50 -c 50 -f insert.sql -T 30
+starting vacuum...end.
+transaction type: insert.sql
+scaling factor: 1
+query mode: simple
+number of clients: 50
+number of threads: 50
+duration: 30 s
+number of transactions actually processed: 535982
+latency average = 2.803 ms
+tps = 17836.198169 (including connections establishing)
+tps = 17913.474558 (excluding connections establishing)
+
+shared_buffers = 256MB  
+alex@pc:~/pgbench$ pgbench -h localhost test alex -j 50 -c 50 -f insert.sql -T 30
+starting vacuum...end.
+transaction type: insert.sql
+scaling factor: 1
+query mode: simple
+number of clients: 50
+number of threads: 50
+duration: 30 s
+number of transactions actually processed: 583231
+latency average = 2.577 ms
+tps = 19405.687168 (including connections establishing)
+tps = 19491.228431 (excluding connections establishing)
+
+shared_buffers = 512MB  
+alex@pc:~/pgbench$ pgbench -h localhost test alex -j 50 -c 50 -f insert.sql -T 30
+starting vacuum...end.
+transaction type: insert.sql
+scaling factor: 1
+query mode: simple
+number of clients: 50
+number of threads: 50
+duration: 30 s
+number of transactions actually processed: 617306
+latency average = 2.435 ms
+tps = 20536.563660 (including connections establishing)
+tps = 20652.734114 (excluding connections establishing)
+alex@pc:~/pgbench$ pgbench -h localhost test alex -j 50 -c 50 -f insert.sql -T 30
+starting vacuum...end.
+transaction type: insert.sql
+scaling factor: 1
+query mode: simple
+number of clients: 50
+number of threads: 50
+duration: 30 s
+number of transactions actually processed: 637137
+latency average = 2.358 ms
+tps = 21200.099516 (including connections establishing)
+tps = 21299.794021 (excluding connections establishing)
+
+shared_buffers = 1024MB  
+alex@pc:~/pgbench$ pgbench -h localhost test alex -j 50 -c 50 -f insert.sql -T 30
+starting vacuum...end.
+transaction type: insert.sql
+scaling factor: 1
+query mode: simple
+number of clients: 50
+number of threads: 50
+duration: 30 s
+number of transactions actually processed: 594826
+latency average = 2.527 ms
+tps = 19786.182191 (including connections establishing)
+tps = 19879.610823 (excluding connections establishing)
