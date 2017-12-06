@@ -1,0 +1,29 @@
+select count(distinct h.aid) from pgbench_history h join pgbench_accounts a on h.aid =  a.aid
+
+//cluster 2 worker on 2 machines
+alex@alex-pc:/opt/www/pgbench$ pgbench -h 10.42.2.171 -p 5432 -U postgres -j 1 -c 1 -f select_join.sql -T 10 -n
+transaction type: select_join.sql
+scaling factor: 1
+query mode: simple
+number of clients: 1
+number of threads: 1
+duration: 10 s
+number of transactions actually processed: 8
+latency average = 1285.980 ms
+tps = 0.777617 (including connections establishing)
+tps = 0.778093 (excluding connections establishing)
+
+//singl instance postgre
+alex@alex-pc:/opt/www/pgbench$ pgbench -h localhost -p 5432 -U postgres -j 1 -c 1 -f select_join.sql -T 10 -n
+Password: 
+transaction type: select_join.sql
+scaling factor: 1
+query mode: simple
+number of clients: 1
+number of threads: 1
+duration: 10 s
+number of transactions actually processed: 2
+latency average = 7860.150 ms
+tps = 0.127224 (including connections establishing)
+tps = 0.127268 (excluding connections establishing)
+

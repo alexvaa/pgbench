@@ -1,0 +1,59 @@
+//insert test on single instance (in table more 5M)
+
+//cluster 2 worker on 2 machines
+//attempt 1
+alex@alex-pc:/opt/www/pgbench$ pgbench -h 10.42.2.171 -p 5432 -U postgres -j 50 -c 50 -f insert.sql -T 30 -n
+transaction type: insert.sql
+scaling factor: 1
+query mode: simple
+number of clients: 50
+number of threads: 50
+duration: 30 s
+number of transactions actually processed: 48172
+latency average = 31.231 ms
+tps = 1600.971936 (including connections establishing)
+tps = 1607.724857 (excluding connections establishing)
+
+//attempt 2
+alex@alex-pc:/opt/www/pgbench$ pgbench -h 10.42.2.171 -p 5432 -U postgres -j 50 -c 50 -f insert.sql -T 30 -n
+transaction type: insert.sql
+scaling factor: 1
+query mode: simple
+number of clients: 50
+number of threads: 50
+duration: 30 s
+number of transactions actually processed: 45647
+latency average = 33.014 ms
+tps = 1514.487598 (including connections establishing)
+tps = 1521.955773 (excluding connections establishing)
+
+
+
+//singl instance postgre
+//attempt 1
+alex@alex-pc:/opt/www/pgbench$ pgbench -h localhost -p 5432 -U postgres -j 50 -c 50 -f insert.sql -T 30 -n
+Password: 
+transaction type: insert.sql
+scaling factor: 1
+query mode: simple
+number of clients: 50
+number of threads: 50
+duration: 30 s
+number of transactions actually processed: 50095
+latency average = 30.197 ms
+tps = 1655.783130 (including connections establishing)
+tps = 1658.025857 (excluding connections establishing)
+
+//attempt 2
+alex@alex-pc:/opt/www/pgbench$ pgbench -h localhost -p 5432 -U postgres -j 50 -c 50 -f insert.sql -T 30 -n
+Password: 
+transaction type: insert.sql
+scaling factor: 1
+query mode: simple
+number of clients: 50
+number of threads: 50
+duration: 30 s
+number of transactions actually processed: 48478
+latency average = 30.969 ms
+tps = 1614.526381 (including connections establishing)
+tps = 1616.350923 (excluding connections establishing)
